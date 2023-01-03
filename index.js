@@ -11,7 +11,12 @@ const displayPhone =(phones)=>{
 
 const phoneContainer = document.getElementById('phone-container')
 phoneContainer.textContent = '';
- for(const phone of phones){
+/*
+dispaly phones
+*/
+
+phones = phones.slice(0,10);
+for(const phone of phones){
 
   const phoneDiv = document.createElement('div');
   phoneDiv.classList.add('col');
@@ -61,14 +66,7 @@ loadPhone();
 
 
 
-/*
 
-
-amr shonar bangla ami tomaye valobashi ,, i love you my dear bou tmi kmn ascho
-
-
-
-*/
 
 
 
