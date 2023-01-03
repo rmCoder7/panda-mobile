@@ -16,6 +16,31 @@ dispaly phones
 */
 
 phones = phones.slice(0,10);
+
+//  warning sections start
+
+const noPhones = document.getElementById('no-found-message');
+
+if (phones.length === 0){
+
+ noPhones.classList.remove("d-none");
+
+
+}
+
+else {
+
+  noPhones.classList.add("d-none");
+
+}
+
+// start
+
+
+
+
+
+
 for(const phone of phones){
 
   const phoneDiv = document.createElement('div');
