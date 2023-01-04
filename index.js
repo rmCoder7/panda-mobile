@@ -86,7 +86,7 @@ document.getElementById('btn-search').addEventListener('click', function(){
 
 
 
-loadPhone();
+// loadPhone();
 
 
 
