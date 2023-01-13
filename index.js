@@ -47,12 +47,13 @@ for(const phone of phones){
   phoneDiv.classList.add('col');
   phoneDiv.innerHTML= `  
   
-  <div class="card h-100 w-50 m-3">
+  <div class="card h-100 w-50 m-2">
             <img src="${phone.image}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${phone.phone_name}</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+              <button onclick = "loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-primary">Show Details</button>
+              </div>
           </div>
   
           
@@ -67,10 +68,12 @@ for(const phone of phones){
 
 }
 
-
+// handle search button click
 
 document.getElementById('btn-search').addEventListener('click', function(){
+// loading coder started here basically,
 
+togglespiner(true);
   const searchField = document.getElementById('search-field')
   const searchText = searchField.value;
   loadPhone(searchText);
@@ -81,6 +84,51 @@ document.getElementById('btn-search').addEventListener('click', function(){
 
 
 })
+
+
+// pressing Enter in Search field
+
+document.getElementById('search-field').addEventListener('keypress' , function(e){
+ 
+  
+
+ if (e.key === 'Enter'){
+
+  const searchField = document.getElementById('search-field')
+  const searchText = searchField.value;
+  loadPhone(searchText);
+
+
+
+
+ }
+
+
+})
+
+
+// loader coding
+
+const togglespiner =isloading=>{
+
+const loaderSection = document.getElementById("loader");
+if(isloading){
+
+  loaderSection.classList.remove("d-none")
+
+
+}
+
+ else{
+
+  loaderSection.classList.add('d-none')
+
+ }
+
+}
+
+
+
 
 
 
